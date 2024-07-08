@@ -24,7 +24,7 @@ def load_model():
 
 template = 'Question:\n{question}\n\nAnswer:\n{answer}'
 med_lm = load_model()
-sampler = keras_nlp.samplers.TopKSampler(k=5, seed=2)
+sampler = keras_nlp.samplers.TopKSampler(k=1, seed=2)
 med_lm.compile(sampler=sampler)
 
 # react to user input
