@@ -24,8 +24,7 @@ def load_model():
 
 template = 'Question:\n{question}\n\nAnswer:\n{answer}'
 med_lm = load_model()
-sampler = keras_nlp.samplers.TopKSampler(k=1, seed=2)
-med_lm.compile(sampler=sampler)
+med_lm.compile(sampler='top_k')
 
 # react to user input
 if prompt := st.chat_input('enter health question (experimental)'):
