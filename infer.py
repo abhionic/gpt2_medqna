@@ -2,6 +2,8 @@ import streamlit as st
 import os; import time
 
 st.title('Abhi Micro Med LM')
+os.environ['KAGGLE_USERNAME'] = st.secrets['kaggle_username']
+os.environ['KAGGLE_KEY'] = st.secrets['kaggle_key']
 os.environ['KERAS_BACKEND'] = 'tensorflow'
 # os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION'] = '0.9'
 import keras_nlp
