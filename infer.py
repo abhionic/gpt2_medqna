@@ -24,7 +24,9 @@ def load_model():
 
 template = 'Question:\n{question}\n\nAnswer:\n{answer}'
 med_lm = load_model()
-med_lm.compile(sampler='top_k')
+med_lm.preprocessor.sequence_length = 512
+sampler = keras_nlp.samplers.TopKSampler(k=5, seed=2)
+med_lm.compile(sampler=sampler)
 
 # react to user input
 if prompt := st.chat_input('enter health question (experimental)'):
@@ -34,7 +36,7 @@ if prompt := st.chat_input('enter health question (experimental)'):
     with st.chat_message('user'):
         st.markdown(prompt)
     context = template.format(question=prompt, answer='',)
-    answer = med_lm.generate(context, max_length=128)
+    answer = med_lm.generate(context, max_length=256)
     def stream_data():
         for word in answer.split(' '):
             yield word + ' '
