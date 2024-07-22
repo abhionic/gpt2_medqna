@@ -1,2 +1,2 @@
 # gpt2_medqna
-Fine-tuned on medical qna dataset with LoRA.
+Fine-tuned on medical qna dataset.
