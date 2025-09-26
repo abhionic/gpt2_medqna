@@ -5,8 +5,8 @@ import keras; from keras import ops
 import keras_hub as kh; import kagglehub
 
 st.title('Abhi Micro Med LM')
-os.environ['KAGGLE_USERNAME'] = st.secrets['kaggle_username']
-os.environ['KAGGLE_KEY'] = st.secrets['kaggle_key']
+os.environ['KAGGLE_USERNAME'] = st.secrets.kaggle_username
+os.environ['KAGGLE_KEY'] = st.secrets.kaggle_key
 
 # initialize chat history
 if 'messages' not in st.session_state:
