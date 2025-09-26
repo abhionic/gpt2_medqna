@@ -1,2 +1,2 @@
-keras-nlp
+keras_hub
 keras
