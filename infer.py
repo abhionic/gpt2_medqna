@@ -2,7 +2,7 @@
 
 import streamlit as st; import os
 import keras; from keras import ops
-import keras_hub as kh
+import keras_hub as kh; import kagglehub
 
 st.title('Abhi Micro Med LM')
 os.environ['KAGGLE_USERNAME'] = st.secrets['kaggle_username']
